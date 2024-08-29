@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "CategoryPostList";
+    Layout = "~/Views/Shared/HomeLayout2.cshtml";
+}
+
+@model DTO.GeneralDTO
+
+<main>
+    <!-- Top Posts Start -->
+    <div class="top-post-area mb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>@Model.CategoryName</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    @if (Model.Videos != null && Model.Videos.Count != 0)
+                    {
+                        foreach (var item in Model.Videos)
+                        {
+                            <div class="single-job-items mb-30">
+                                <div class="job-items">
+                                    <div class="company-img">
+                                        <a href="@item.OriginalVideoPath"> @Html.Raw(item.VideoPath)</a>
+                                    </div>
+                                    <div class="job-tittle text-left">
+                                        <a href="@item.OriginalVideoPath"><h4>@item.Title</h4></a>
+                                        <div class="post-meta d-flex justify-content-start">
+                                            <span class="post-date">@item.AddDate.ToString("dd.MM.yyyy dddd")</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else if (Model.CategoryPostList != null && Model.CategoryPostList.Count != 0)
+                    {
+                        foreach (var item in Model.CategoryPostList)
+                        {
+                            <div class="single-job-items mb-30">
+                                <div class="job-items">
+                                    <div class="company-img">
+                                        <a href="@Url.RouteUrl("PostDetail", new {@ID=item.ID, @CategoryName=BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink=item.SeoLink})">
+                                            <img src="~/Areas/Admin/Content/PostImage/@item.ImagePath" alt="@item.Title">
+                                        </a>
+                                    </div>
+                                    <div class="job-tittle text-left">
+                                        <a href="@Url.RouteUrl("PostDetail", new {@ID=item.ID, @CategoryName=BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink=item.SeoLink})"><h4>@item.Title</h4></a>
+                                        <div class="post-meta d-flex justify-content-start">
+                                            <span class="post-date">@item.AddDate.ToString("dd.MM.yyyy dddd")</span>
+                                            <div class="ml-3">
+                                                <a href=""><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
+                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2">@item.ShortContent</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No posts available in this category.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Posts End -->
+</main>

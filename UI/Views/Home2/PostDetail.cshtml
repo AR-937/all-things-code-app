@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "PostDetail";
+    Layout = "~/Views/Shared/HomeLayout2.cshtml";
+}
+
+@model DTO.GeneralDTO
+
+    
+<main>
+    <!-- ##### Post Details Start ##### -->
+    <div class="post-details pb-80">
+        <div class="container">
+            <div class="row">
+                <!-- Post Image -->
+                <div class="col-lg-12">
+                    <div class="details-img mb-40">
+                        <!-- Check if there's an image path -->
+                        @if (Model.PostDetail.PostImages.Any())
+                        {
+                            <img class="img-fluid" src="~/Areas/Admin/Content/PostImage/@Model.PostDetail.PostImages.FirstOrDefault().ImagePath" alt="Post Image">
+                        }
+                        else
+                        {
+                            <p>No image available</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Post Title -->
+                <div class="col-lg-8">
+                    <div class="about-details-cap">
+                        <h2>@Model.PostDetail.Title</h2>
+                        <div class="post-meta">
+                            <span class="meta-item">Comments: @Model.PostDetail.CommentCount</span>
+                            <span class="meta-item">Posted on: @Model.PostDetail.AddDate.ToString("dd.MM.yyyy dddd")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <!-- Post Content -->
+                <div class="col-lg-8">
+                    <div class="about-details-cap">
+                        @Html.Raw(Model.PostDetail.PostContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Post Details End ##### -->
+    <!--Comments Area -->
+    <div class="coments-area pb-80">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-12">
+                    <div class="small-tittle mb-30">
+                        <h2>Comments</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-11">
+                    <ul>
+                        @foreach (var item in Model.PostDetail.CommentList)
+                        {
+                            <li class="single_comment_area">
+                                <!-- Comment Content -->
+                                <div class="single-comments mb-40">
+                                    <div class="comments-items">
+
+                                        <div class="comments-tittle">
+                                            <h2>@item.Name</h2>
+                                            <h5><a class="comment-date">@item.AddDate.ToString("dd.MM.yyyy dddd")</a></h5>
+                                            <p>@item.CommentContent</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>             
+            </div>
+            <!-- Form -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- contact-form -->
+                    <div class="form-wrapper pt-80">
+                        <div class="row ">
+                            <div class="col-xl-12">
+                                <div class="small-tittle mb-30">
+                                    <h2>Drop your comment below</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="contact-form" action="#" method="POST">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-box user-icon mb-15">
+                                        <input type="text" name="Name" id="name" placeholder="Enter your name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="form-box email-icon mb-15">
+                                        <input type="email" name="Email" id="email" placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-12 col-md-6 mb-15">
+                                    <div class="select-itms">
+                                        <select name="select" id="select2">
+                                            <option value="">Topic</option>
+                                            <option value="">Topic one</option>
+                                            <option value="">Topic Two</option>
+                                            <option value="">Topic Three</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-12">
+                                    <div class="form-box message-icon mb-15">
+                                        <textarea name="Message" id="message" placeholder="Comment"></textarea>
+                                    </div>
+                                    <input hidden value="@Model.PostDetail.ID" name="PostID" />
+                                    <div class="submit-info">
+                                        <button class="submit-btn2" type="submit">Submit Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Comments Area End -->
+    <!-- Latest Posts Area -->
+    <div class="latest-posts pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-tittle mb-35">
+                        <h2>Latest Posts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.BreakingPost)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="/Areas/Admin/Content/PostImage/@item.ImagePath" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                    <p>@item.CategoryName</p>
+                                    <h3><a href="@Url.RouteUrl("PostDetail", new { ID = item.ID, CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), SeoLink = item.SeoLink })">@item.Title</a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;">Indie folks start out by making something they want to read, that tell stories they want told...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Latest Posts End-->
+</main>
+ 

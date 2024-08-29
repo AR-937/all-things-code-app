@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/HomeLayout2.cshtml";
+}
+
+@model DTO.GeneralDTO
+
+<main>
+    <!-- Banner News Area Start -->
+    <div class="banner-news">
+        <div class="container-fluid p-0">
+            <div class="banner-slider-active no-gutters">
+                @foreach (var post in Model.SliderPost)
+                {
+                    <div class="single-sliders">
+                        <div class="single-baner-nw mb-30 text-center">
+                            <div class="banner-img-cap">
+                                <div class="banner-img">
+                                    <img src="/Areas/Admin/Content/PostImage/@post.ImagePath" alt="@post.Title">
+                                </div>
+                                <div class="banner-cap">
+                                    <p>@post.CategoryName</p>
+                                    <h3><a href="@Url.RouteUrl("PostDetail", new { ID = post.ID, CategoryName = BLL.SeoLink.GenerateUrl(post.CategoryName), SeoLink = post.SeoLink })">@post.Title</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Banner News Area End -->
+    <!-- Most Viewed Posts Area -->
+    <div class="most-viewed-posts pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-tittle mb-35">
+                        <h2>Most Viewed</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var post in Model.MostViewedPost)
+                {
+                    <div class="col-lg-6 mb-30">
+                        <div class="single-baner-nw2 text-center">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="/Areas/Admin/Content/PostImage/@post.ImagePath" alt="@post.Title">
+                                </div>
+                                <div class="banner-cap2">
+                                    <p>@post.CategoryName</p>
+                                    <h3><a href="@Url.RouteUrl("PostDetail", new { ID = post.ID, CategoryName = BLL.SeoLink.GenerateUrl(post.CategoryName), SeoLink = post.SeoLink })">@post.Title</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Most Viewed Posts End -->
+    <!-- Video Area Start -->
+    <div class="latest-posts pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-tittle mb-35">
+                        <h2>Videos</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.Videos)
+                {
+                    <div class="col-12 col-md-4">
+                        <div class="single-post-area mb-80">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                @Html.Raw(item.VideoPath)
+                            </div>
+
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="@item.OriginalVideoPath" target="_blank" class="post-title">
+                                    <h3>@item.Title</h3>
+                                    <p>@item.AddDate.ToString("dd.MM.yyyy")</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Video Area End -->
+    <!-- Top Posts Start -->
+    <div class="top-post-area pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-tittle mb-35">
+                        <h2>Top Posts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-lg-between">
+                <div class="col-lg-8 col-md-8">
+                    @foreach (var item in Model.PopularPost)
+                    {
+                        <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="@Url.RouteUrl("PostDetail", new { ID = item.ID, CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), SeoLink = item.SeoLink })">
+                                        <img class="top-post-img" src="/Areas/Admin/Content/PostImage/@item.ImagePath" alt="">
+                                    </a>
+                                </div>
+                                <div class="job-tittle">
+                                    <span>Trending</span>
+                                    <a href="@Url.RouteUrl("PostDetail", new { ID = item.ID, CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), SeoLink = item.SeoLink })">
+                                        <h4>@item.Title</h4>
+                                    </a>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="google-add mb-40">
+                        <img src="assets/img/gallery/Ad.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Posts End -->
+    <!-- Latest Posts Area -->
+    <div class="latest-posts pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-tittle mb-35">
+                        <h2>Latest Posts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.BreakingPost)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-baner-nw2 mb-30">
+                            <div class="banner-img-cap2">
+                                <div class="banner-img">
+                                    <img src="/Areas/Admin/Content/PostImage/@item.ImagePath" alt="">
+                                </div>
+                                <div class="banner-cap2">
+                                    <p>@item.CategoryName</p>
+                                    <h3><a href="@Url.RouteUrl("PostDetail", new { ID = item.ID, CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), SeoLink = item.SeoLink })">@item.Title</a></h3>
+                                    <p class="blog-text" style="text-transform: normal !important;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Latest Posts End-->
+</main>
