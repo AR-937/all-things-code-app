@@ -20,7 +20,7 @@ Welcome to **All Things Code**, a dynamic platform for programming enthusiasts. 
 
 ## Technologies Used
 
-All Things Code is built using ASP.NET MVC with C#, utilizing Entity Framework (Database-First) for ORM and Microsoft SQL Server for data storage. The front-end is crafted with HTML5, CSS3, JavaScript, and Bootstrap for responsive design.
+All Things Code is built using ASP.NET MVC with C#/.NET, utilizing Entity Framework (Database-First) for ORM and Microsoft SQL Server for data storage. The front-end uses HTML5, CSS3, JavaScript, and Bootstrap for responsive design.
 
 ## Project Structure
 
@@ -28,7 +28,7 @@ The project follows an **N-tier architecture**, consisting of Presentation, Busi
 
 ## Purpose
 
-This project demonstrates my full-stack web development skills, particularly in ASP.NET MVC and related technologies. **All Things Code** serves as both a learning resource and a portfolio to showcase my technical abilities to potential employers.
+This project demonstrates my full-stack web development skills, particularly in ASP.NET MVC and related technologies. **All Things Code** serves as a learning resource and a portfolio to showcase my technical abilities to potential employers.
 
 ## Contact
 
