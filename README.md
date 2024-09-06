@@ -1,3 +1,5 @@
+![Screenshot (95)](https://github.com/user-attachments/assets/a1310006-7264-477b-bb86-dc0843b96eef)
+
 # All Things Code
 
 Welcome to **All Things Code**, a dynamic platform for programming enthusiasts. Built with Visual Studio 2022, this website showcases various technologies and best practices in full-stack software engineering while serving as a comprehensive resource for learning software development.
