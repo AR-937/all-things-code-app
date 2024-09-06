@@ -660,7 +660,6 @@
     <Content Include="Views\Home2\CategoryPostList.cshtml" />
     <Content Include="Views\Home2\ContactUs.cshtml" />
     <Content Include="Views\Home2\Search.cshtml" />
-    <Content Include="Views\Home2\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
