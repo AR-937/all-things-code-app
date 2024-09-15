@@ -2,11 +2,11 @@
 
 # All Things Code
 
-**All Things Code** is a dynamic platform for programming enthusiasts. This website serves as a comprehensive resource for learning software development, showcasing various technologies and best practices in full-stack software engineering.
+**All Things Code** is a dynamic platform for programming enthusiasts. This website serves as a comprehensive resource for learning software development, showcasing various technologies and best practices in full-stack software engineering. It offers a robust content management system, a secure administration interface, and a user-friendly public section. Visitors can explore a wide range of programming articles, tutorials, and videos on various technologies. The application supports full CRUD operations for managing content.
 
 ## Features
 
-- **Dynamic Content Management**: Utilizes Entity Framework (Database-First) for flexible and efficient content handling.
+- **Dynamic Content Management**: Supports CRUD operations for articles, tutorials, and media. Admins can add, update, delete, and view content through a secure admin panel.
 - **Secure Admin Panel**: Provides a robust back-end interface for managing posts, categories, tags, and media.
 - **Fully Responsive**: Ensures a seamless user experience across all devices and screen sizes.
 - **SEO Optimized**: Incorporates clean URLs and meta tags to improve search engine visibility.
