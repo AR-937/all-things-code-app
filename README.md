@@ -2,32 +2,33 @@
 
 # All Things Code
 
-Welcome to **All Things Code**, a dynamic platform for programming enthusiasts. This website showcases various technologies and best practices in full-stack software engineering while serving as a comprehensive resource for learning software development.
+**All Things Code** is a dynamic platform for programming enthusiasts. This website serves as a comprehensive resource for learning software development, showcasing various technologies and best practices in full-stack software engineering.
 
-## Overview
+## Features
 
-**All Things Code** is a content-driven platform designed with scalability and maintainability in mind. Built using a multi-tier architecture, it offers a robust content management system (CMS), a secure administration interface, and a user-friendly public section. Visitors can explore a wide range of programming articles, tutorials, and videos on various technologies.
+- **Dynamic Content Management**: Utilizes Entity Framework (Database-First) for flexible and efficient content handling.
+- **Secure Admin Panel**: Provides a robust back-end interface for managing posts, categories, tags, and media.
+- **Fully Responsive**: Ensures a seamless user experience across all devices and screen sizes.
+- **SEO Optimized**: Incorporates clean URLs and meta tags to improve search engine visibility.
+- **Rich Media Integration**: Supports embedding of videos, images, and other media formats into posts.
+- **Commenting System**: Includes a user-friendly comment system with moderation features for enhanced interaction.
 
-## Key Features
+## Tech Stack
 
-- **Dynamic Content Management**: Built on Entity Framework (Database-First), allowing flexible and efficient content handling.
-- **Secure Admin Panel**: Manage posts, categories, tags, and media with ease through a secure back-end interface.
-- **Fully Responsive**: Ensures seamless user experience across devices of all screen sizes.
-- **SEO Optimized**: Enhanced with clean URLs and proper meta tags for improved search engine visibility.
-- **Rich Media Integration**: Easily embed videos, images, and other media formats into posts.
-- **Commenting System**: A user-friendly comment system with moderation features for enhanced content interaction.
+- **ASP.NET MVC**: Framework used for building the application.
+- **Entity Framework**: ORM for data management in a Database-First approach.
+- **Microsoft SQL Server**: Database management system.
+- **HTML5, CSS3, JavaScript**: Front-end technologies for a modern, responsive design.
+- **Bootstrap**: Framework for styling and layout.
 
-## Technologies Used
+## Architecture
 
-The website is built using **ASP.NET MVC**, utilizing **Entity Framework** in a Database-First approach. For data storage, it uses **Microsoft SQL Server**, and the front-end is powered by **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap** to ensure a modern, responsive design.
+The project follows an **N-tier architecture**, separating concerns into:
+- **Presentation Layer**: Handles user interface and interactions.
+- **Business Logic Layer**: Manages core functionality and processes.
+- **Data Access Layer**: Interfaces with the database for data retrieval and manipulation.
 
-## Project Structure
-
-The project is structured following an **N-tier architecture**, separating concerns into the Presentation, Business Logic, and Data Access layers. This structure enhances maintainability and scalability by allowing each layer to be developed and modified independently.
-
-## Purpose
-
-**All Things Code** was created to provide a centralized resource for learning and sharing knowledge about software development. It demonstrates best practices in full-stack web development using ASP.NET MVC, aiming to help both beginners and experienced developers enhance their skills. Through this project, I hope to contribute to the programming community while continuing to grow as a developer.
+This structure enhances scalability and maintainability by allowing independent development and modification of each layer.
 
 ## Contact
 
