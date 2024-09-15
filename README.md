@@ -2,31 +2,33 @@
 
 # All Things Code
 
-Welcome to **All Things Code**, a dynamic platform for programming enthusiasts. This website showcases various technologies and best practices in full-stack software engineering while serving as a comprehensive resource for learning software development.
+**All Things Code** is a dynamic platform for programming enthusiasts. This website serves as a comprehensive resource for learning software development, showcasing various technologies and best practices in full-stack software engineering.
 
-## Overview
+## Features
 
-**All Things Code** is a content-driven platform designed with scalability and maintainability in mind. Built using a multi-tier architecture, it offers a robust content management system, a secure administration interface, and a user-friendly public section. Visitors can explore a wide range of programming articles, tutorials, and videos on various technologies. The application supports full CRUD operations for managing content.
+- **Dynamic Content Management**: Utilizes Entity Framework (Database-First) for flexible and efficient content handling.
+- **Secure Admin Panel**: Provides a robust back-end interface for managing posts, categories, tags, and media.
+- **Fully Responsive**: Ensures a seamless user experience across all devices and screen sizes.
+- **SEO Optimized**: Incorporates clean URLs and meta tags to improve search engine visibility.
+- **Rich Media Integration**: Supports embedding of videos, images, and other media formats into posts.
+- **Commenting System**: Includes a user-friendly comment system with moderation features for enhanced interaction.
 
-## Key Features
+## Tech Stack
 
-- **Dynamic Content Management**: Supports CRUD operations for articles, tutorials, and media. Admins can add, update, delete, and view content through a secure admin panel.
-- **Secure Admin Panel**: Manage posts, categories, tags, and media with ease through a secure back-end interface.
-- **Fully Responsive**: Ensures a seamless user experience across devices of all screen sizes.
-- **SEO Optimized**: Enhanced with clean URLs and proper meta tags for improved search engine visibility.
-- **Rich Media Integration**: Easily embed videos, images, and other media formats into posts.
-- **Commenting System**: A user-friendly comment system with moderation features for enhanced content interaction.
+- **ASP.NET MVC**: Framework used for building the application.
+- **Entity Framework**: ORM for data management in a Database-First approach.
+- **Microsoft SQL Server**: Database management system.
+- **HTML5, CSS3, JavaScript**: Front-end technologies for a modern, responsive design.
+- **Bootstrap**: Framework for styling and layout.
 
-## Technologies Used
+## Architecture
 
-- **ASP.NET MVC**: Framework for building the web application.
-- **Entity Framework**: ORM framework for efficient data access and CRUD operations.
-- **Microsoft SQL Server**: For managing the application's database.
-- **HTML5**, **CSS3**, **JavaScript**, **Bootstrap**: For front-end development.
+The project follows an **N-tier architecture**, separating concerns into:
+- **Presentation Layer**: Handles user interface and interactions.
+- **Business Logic Layer**: Manages core functionality and processes.
+- **Data Access Layer**: Interfaces with the database for data retrieval and manipulation.
 
-## Project Structure
-
-The project is structured following an **N-tier architecture**, separating concerns into the Presentation, Business Logic, and Data Access layers. This structure enhances maintainability and scalability by allowing each layer to be developed and modified independently.
+This structure enhances scalability and maintainability by allowing independent development and modification of each layer.
 
 ## Contact
 
