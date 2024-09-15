@@ -6,7 +6,7 @@
 
 ## Features
 
-- **Dynamic Content Management**: Supports CRUD operations for articles, tutorials, and media. Admins can add, update, delete, and view content through a secure admin panel.
+- **Dynamic Content Management**: Supports full CRUD operations for various data entities, including articles, tutorials and videos. Admins can manage all aspects of content through a secure admin panel.
 - **Secure Admin Panel**: Provides a robust back-end interface for managing posts, categories, tags, and media.
 - **Fully Responsive**: Ensures a seamless user experience across all devices and screen sizes.
 - **SEO Optimized**: Incorporates clean URLs and meta tags to improve search engine visibility.
