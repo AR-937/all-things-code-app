@@ -392,5 +392,7 @@ namespace DAL
 				db.SaveChanges();
 			}
         }
+
+		//Speed up project.
     }
 }
