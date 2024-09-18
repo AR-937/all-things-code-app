@@ -1,34 +1,34 @@
-
 ![Screenshot (95)](https://github.com/user-attachments/assets/a1310006-7264-477b-bb86-dc0843b96eef)
 
 # All Things Code
 
-Welcome to **All Things Code**, a dynamic platform for programming enthusiasts. Built with Visual Studio 2022, this website showcases various technologies and best practices in full-stack software engineering while serving as a comprehensive resource for learning software development.
+**All Things Code** is a dynamic platform for programming enthusiasts. This website serves as a comprehensive resource for learning software development, showcasing various technologies and best practices in full-stack software engineering. It offers a robust content management system, a secure administration interface, and a user-friendly public section. Visitors can explore a wide range of programming articles, tutorials, and videos on various technologies. The application supports full CRUD operations for managing content.
 
-## Overview
+## Features
 
-**All Things Code** is a content-driven website built on a multi-tier architecture, offering a scalable and maintainable structure. It features a dynamic content management system, a secure admin panel, and a public section for exploring articles, tutorials, and videos on diverse programming topics.
+- **Dynamic Content Management**: Supports full CRUD operations for various data entities, including articles, tutorials and videos. Admins can manage all aspects of content through a secure admin panel.
+- **Secure Admin Panel**: Provides a robust back-end interface for managing posts, categories, tags, and media.
+- **Fully Responsive**: Ensures a seamless user experience across all devices and screen sizes.
+- **SEO Optimized**: Incorporates clean URLs and meta tags to improve search engine visibility.
+- **Rich Media Integration**: Supports embedding of videos, images, and other media formats into posts.
+- **Commenting System**: Includes a user-friendly comment system with moderation features for enhanced interaction.
 
-## Key Features
+## Tech Stack
 
-- **Dynamic Content**: Utilizes a database-first approach with Entity Framework for flexible content management.
-- **Admin Panel**: Secure interface for managing posts, categories, tags, and media.
-- **Responsive Design**: Ensures optimal user experience across all devices.
-- **SEO-Friendly**: Optimized with clean URLs and meta tags.
-- **Media Integration**: Seamless embedding of videos and images within posts.
-- **Comment System**: User-friendly system with moderation capabilities.
+- **ASP.NET MVC**: Framework used for building the application.
+- **Entity Framework**: ORM for data management in a Database-First approach.
+- **Microsoft SQL Server**: Database management system.
+- **HTML5, CSS3, JavaScript**: Front-end technologies for a modern, responsive design.
+- **Bootstrap**: Framework for styling and layout.
 
-## Technologies Used
+## Architecture
 
-All Things Code is built using **ASP.NET MVC** with **C#/.NET**, utilizing **Entity Framework (Database-First)** and **Microsoft SQL Server** for data storage. The front-end uses **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap** for responsive design.
+The project follows an **N-tier architecture**, separating concerns into:
+- **Presentation Layer**: Handles user interface and interactions.
+- **Business Logic Layer**: Manages core functionality and processes.
+- **Data Access Layer**: Interfaces with the database for data retrieval and manipulation.
 
-## Project Structure
-
-The project follows an **N-tier architecture**, consisting of Presentation, Business Logic, Data Access layers, and Data Transfer Objects.
-
-## Purpose
-
-This project demonstrates my full-stack web development skills, particularly in ASP.NET MVC and related technologies. **All Things Code** serves as a learning resource and a portfolio to showcase my technical abilities to potential employers.
+This structure enhances scalability and maintainability by allowing independent development and modification of each layer.
 
 ## Contact
 
