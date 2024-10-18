@@ -175,7 +175,7 @@ namespace DAL
             List<CommentDTO> dtolist = new List<CommentDTO>();
             using (POSTDATAEntities db = new POSTDATAEntities())
             {
-				var list = (from c in db.Comments.Where(x => x.isDeleted == false)
+				List<CommentDTO> list = (from c in db.Comments.Where(x => x.isDeleted == false)
 						join p in db.Posts on c.PostID equals p.ID
 						select new
 						{
@@ -186,18 +186,26 @@ namespace DAL
 							AddDate = c.AddDate,
 							isApproved = c.isApproved
 						}
-						).OrderBy(x => x.AddDate).ToList();
-				foreach (var item in list)
-				{
-					CommentDTO dto = new CommentDTO();
-					dto.ID = item.ID;
-					dto.PostTitle = item.PostTitle;
-					dto.Email = item.Email;
-					dto.CommentContent = item.Content;
-					dto.AddDate = item.AddDate;
-					dto.isApproved = item.isApproved;
-					dtolist.Add(dto);
-				}
+						).OrderBy(x => x.AddDate).Select(x => new CommentDTO()
+						{
+							ID = x.ID,
+							PostTitle = x.PostTitle,
+							Email = x.Email,
+							CommentContent = x.Content,
+							AddDate = x.AddDate,
+							isApproved = x.isApproved
+						}).ToList();
+				//foreach (var item in list)
+				//{
+				//	CommentDTO dto = new CommentDTO();
+				//	dto.ID = item.ID;
+				//	dto.PostTitle = item.PostTitle;
+				//	dto.Email = item.Email;
+				//	dto.CommentContent = item.Content;
+				//	dto.AddDate = item.AddDate;
+				//	dto.isApproved = item.isApproved;
+				//	dtolist.Add(dto);
+				//}
             }           
             return dtolist;
         }
@@ -316,7 +324,7 @@ namespace DAL
 			List<PostDTO> dtolist = new List<PostDTO>();
 			using (POSTDATAEntities db = new POSTDATAEntities())
 			{
-                var postlist = (from p in db.Posts.Where(x => x.isDeleted == false)
+                List<PostDTO> postlist = (from p in db.Posts.Where(x => x.isDeleted == false)
                                 join c in db.Categories on p.CategoryID equals c.ID
                                 select new
                                 {
@@ -324,17 +332,23 @@ namespace DAL
                                     Title = p.Title,
                                     categoryname = c.CategoryName,
                                     AddDate = p.AddDate
-                                }).OrderByDescending(x => x.AddDate).ToList();
+                                }).OrderByDescending(x => x.AddDate).Select(x => new PostDTO()
+								{
+									ID = x.ID,
+									Title = x.Title,
+									AddDate= x.AddDate,
+									CategoryName = x.categoryname
+								}).ToList();
 
-                foreach (var item in postlist)
-                {
-                    PostDTO dto = new PostDTO();
-                    dto.Title = item.Title;
-                    dto.ID = item.ID;
-                    dto.CategoryName = item.categoryname;
-                    dto.AddDate = item.AddDate;
-                    dtolist.Add(dto);
-                }
+                //foreach (var item in postlist)
+                //{
+                //    PostDTO dto = new PostDTO();
+                //    dto.Title = item.Title;
+                //    dto.ID = item.ID;
+                //    dto.CategoryName = item.categoryname;
+                //    dto.AddDate = item.AddDate;
+                //    dtolist.Add(dto);
+                //}
             }			
 			return dtolist;
 		}

@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class AddressDAO : PostContext
+    public class AddressDAO
     {
-
         public int AddAddress(Address ads)
         {
-			try
+			using (POSTDATAEntities db = new POSTDATAEntities())
 			{
-				db.Addresses.Add(ads);
-				db.SaveChanges();
-				return ads.ID;
-			}
-			catch (Exception ex)
-			{
+                try
+                {
+                    db.Addresses.Add(ads);
+                    db.SaveChanges();
+                    return ads.ID;
+                }
+                catch (Exception ex)
+                {
 
-				throw ex;
-			}
+                    throw ex;
+                }
+            }			
         }
     }
 }
